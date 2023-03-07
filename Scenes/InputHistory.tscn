@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://FontsRes/pixel_mono_16.tres" type="DynamicFont" id=1]
+
+[node name="InputHistory" type="Label"]
+self_modulate = Color( 0.67451, 0.67451, 0.67451, 1 )
+margin_right = 984.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = " > Esto es lo que el usuario escribio"

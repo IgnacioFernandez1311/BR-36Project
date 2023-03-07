@@ -1,0 +1,240 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scenes/BaseButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Fonts/Kenney Rocket.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=3]
+[ext_resource path="res://FontsRes/pixel_mono_16.tres" type="DynamicFont" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Cursor:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 48, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Cursor/CursorCart:rect_position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -16, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Cursor/CursorCart:rect_position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( -16, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "cursor_move"
+length = 0.6
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Cursor/CursorCart:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( -16, -0.25, 0, 0.25, 0, -12, -0.25, 0, 0.25, 0, -16, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Cursor/CursorCart:rect_position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -16, -0.25, 0, 0.25, 0, -16, -0.25, 0, 0.25, 0, -16, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6 )
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("MainMenuMargin/Rows/HBoxContainer/Title:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MainMenuMargin/Rows/HBoxContainer/Cursos:percent_visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "blink"
+length = 0.75
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("MainMenuMargin/Rows/HBoxContainer/Cursos:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "write"
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("MainMenuMargin/Rows/HBoxContainer/Title:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2 )
+}
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0.0745098, 0.0745098, 0.0745098, 1 )
+
+[node name="MainMenuMargin" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_top = 150
+custom_constants/margin_left = 40
+custom_constants/margin_bottom = 150
+
+[node name="Rows" type="VBoxContainer" parent="MainMenuMargin"]
+margin_left = 40.0
+margin_top = 150.0
+margin_right = 1024.0
+margin_bottom = 450.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainMenuMargin/Rows"]
+margin_right = 984.0
+margin_bottom = 88.0
+size_flags_vertical = 3
+
+[node name="Title" type="Label" parent="MainMenuMargin/Rows/HBoxContainer"]
+margin_top = 24.0
+margin_right = 428.0
+margin_bottom = 64.0
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 1 )
+text = "Proyecto BR-36"
+percent_visible = 0.0
+
+[node name="Cursos" type="Label" parent="MainMenuMargin/Rows/HBoxContainer"]
+margin_left = 432.0
+margin_top = 24.0
+margin_right = 464.0
+margin_bottom = 64.0
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 1 )
+text = "_"
+percent_visible = 0.0
+
+[node name="Divider" type="Control" parent="MainMenuMargin/Rows"]
+margin_top = 92.0
+margin_right = 984.0
+margin_bottom = 180.0
+size_flags_vertical = 3
+
+[node name="ButtonsMargin" type="MarginContainer" parent="MainMenuMargin/Rows"]
+margin_top = 184.0
+margin_right = 984.0
+margin_bottom = 300.0
+custom_constants/margin_left = 60
+
+[node name="Buttons" type="VBoxContainer" parent="MainMenuMargin/Rows/ButtonsMargin"]
+margin_left = 60.0
+margin_right = 183.0
+margin_bottom = 116.0
+size_flags_horizontal = 0
+alignment = 1
+
+[node name="Play" parent="MainMenuMargin/Rows/ButtonsMargin/Buttons" instance=ExtResource( 1 )]
+margin_right = 123.0
+text = "Jugar"
+
+[node name="Options" parent="MainMenuMargin/Rows/ButtonsMargin/Buttons" instance=ExtResource( 1 )]
+margin_top = 40.0
+margin_right = 123.0
+margin_bottom = 76.0
+text = "Opciones"
+
+[node name="Quit" parent="MainMenuMargin/Rows/ButtonsMargin/Buttons" instance=ExtResource( 1 )]
+margin_top = 80.0
+margin_right = 123.0
+margin_bottom = 116.0
+text = "Salir"
+
+[node name="Cursor" type="Position2D" parent="MainMenuMargin/Rows/ButtonsMargin"]
+position = Vector2( 48, 18 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CursorCart" type="Label" parent="MainMenuMargin/Rows/ButtonsMargin/Cursor"]
+margin_left = -16.0
+margin_top = -16.0
+margin_right = 16.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 4 )
+text = ">"
+align = 1
+valign = 1
+clip_text = true
+
+[node name="CursorAnimation" type="AnimationPlayer" parent="MainMenuMargin/Rows/ButtonsMargin"]
+anims/RESET = SubResource( 5 )
+anims/cursor_move = SubResource( 6 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 2 )
+anims/blink = SubResource( 4 )
+anims/write = SubResource( 3 )
+
+[node name="MainMenuAudio" type="AudioStreamPlayer" parent="."]
+
+[connection signal="mouse_entered" from="MainMenuMargin/Rows/ButtonsMargin/Buttons/Play" to="." method="_on_Play_mouse_entered"]
+[connection signal="pressed" from="MainMenuMargin/Rows/ButtonsMargin/Buttons/Play" to="." method="_on_Play_pressed"]
+[connection signal="mouse_entered" from="MainMenuMargin/Rows/ButtonsMargin/Buttons/Options" to="." method="_on_Options_mouse_entered"]
+[connection signal="pressed" from="MainMenuMargin/Rows/ButtonsMargin/Buttons/Options" to="." method="_on_Options_pressed"]
+[connection signal="mouse_entered" from="MainMenuMargin/Rows/ButtonsMargin/Buttons/Quit" to="." method="_on_Quit_mouse_entered"]
+[connection signal="pressed" from="MainMenuMargin/Rows/ButtonsMargin/Buttons/Quit" to="." method="_on_Quit_pressed"]

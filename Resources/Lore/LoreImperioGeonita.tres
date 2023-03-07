@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Lore.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+lore_name = "Imperio de Geos"
+lore = "Los Geonitas son una raza de esclavizadores muy poderosos que habitan en el planeta Geos, en el Sistema Cigny... Tienen un gran imperio conocido como el Imperio de Geos, y se dedican a expandirse lo maximo que pueden y esclavizar a las demas razas para convertirlas en mano de obra..."

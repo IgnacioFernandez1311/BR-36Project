@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Lore.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+lore_name = "Kalebo III"
+lore = "Kalebo III es un planeta re pete, asi que son todos putos ahi... fueron esclavizados por los Geonitas hace algunos años, aunque no les fue facil debido a que los Kalebos son muy cabeza dura y pelioneros..."

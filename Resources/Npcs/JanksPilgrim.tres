@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/NPC.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+npc_name = "Janks"
+npc_display_name = "Janks Pilgrim"
+post_quest_dialog = "Este es el dialogo despues de una quest de un npc..."
+dialogs = [ "Hola, Soy Janks", "Como estas BR-36?", "Espero que estes disfrutando del viaje" ]
+npc_description = "Esta es la descripcion del NPC"

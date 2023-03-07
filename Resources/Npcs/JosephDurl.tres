@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/NPC.gd" type="Script" id=1]
+[ext_resource path="res://Resources/Items/JosephQuestItem.tres" type="Resource" id=2]
+
+[resource]
+script = ExtResource( 1 )
+npc_name = "Joseph"
+npc_display_name = "Joseph Durl"
+post_quest_dialog = "Gracias por devolverme mi diario BR-36, pero eso no significa que te deje invadir mi privaciodad... ve a reparar el impulsor de velocidad sub luz de una vez, esta mision no es un juego..."
+dialogs = [ "Que demonios haces aqui BR-36... Por que entras al dormitorio mientras estoy preparandome para salir a reparar la nave. Sabes que odio que no respeten mi privacidad... Como sea, a ver si te encargar de reparar el impulsor de velocidad sub luz para variar; no se para que tenemos astromecanico si solo te dedicas a vagar por aqui... aqui tienes la llave de la Sala de Motores, ahora largate, haz tu trabajo y deja de invadir mi privacidad...", "Como sea... Necesito encontrar mi Holodiario, no se donde lo he dejado... podrias buscarlo por mi?" ]
+post_quest_dialogs = [ "Gracias por devolverme mi diario BR-36, pero eso no significa que te deje invadir mi privaciodad... ve a reparar el impulsor de velocidad sub luz de una vez, esta mision no es un juego...", "AAAAAAAAAA" ]
+npc_description = "Joseph Durl, lider del ingenieros de la nave."
+quest_item = ExtResource( 2 )
