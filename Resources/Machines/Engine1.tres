@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource( 1 )
-machine_name = "Motor1"
-machine_description = "Este es el motor de velocidad subluz AAAAAA"
+machine_name = "Motor"
+machine_description = "Este es el motor de velocidad subluz"
 repair_item = ExtResource( 2 )

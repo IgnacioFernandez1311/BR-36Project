@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Items/Item.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+item_name = "Identificacion"
+item_type = 1
+item_description = "Esta es la identificacion de un pasajero de la nave:
+Nombre: Janks Pilgrim
+Edad: 46 años standard
+Raza: Kaleg
+Ocupacion: Piloto"

@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Fonts/Kenney Mini.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scripts/BaseButton.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/UIComponents/Cursor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/SFX/select_button.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/SFX/navigate.wav" type="AudioStream" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[node name="BaseButton" type="Button"]
+margin_right = 96.0
+margin_bottom = 36.0
+rect_pivot_offset = Vector2( 48, 18 )
+mouse_default_cursor_shape = 2
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 1 )
+custom_styles/focus = SubResource( 2 )
+text = "Button"
+flat = true
+align = 0
+script = ExtResource( 2 )
+
+[node name="Cursor" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( -5, 18 )
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="NavigatePlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[connection signal="focus_entered" from="." to="." method="_on_BaseButton_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_BaseButton_focus_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_BaseButton_mouse_entered"]
+[connection signal="pressed" from="." to="." method="_on_BaseButton_pressed"]

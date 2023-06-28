@@ -1,67 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://FontsRes/pixel_mono_16.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Scenes/BaseCheckBox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/UIComponents/BaseCheckBox.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/OptionsMenu.gd" type="Script" id=4]
-[ext_resource path="res://Scenes/BaseButton.tscn" type="PackedScene" id=5]
-
-[sub_resource type="Animation" id=1]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/path = NodePath("MarginContainer/Cursor/CursorCart:align")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
-}
-tracks/1/type = "bezier"
-tracks/1/path = NodePath("MarginContainer/Cursor/CursorCart:rect_position:x")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"points": PoolRealArray( -16, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
-}
-tracks/2/type = "bezier"
-tracks/2/path = NodePath("MarginContainer/Cursor/CursorCart:rect_position:y")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"points": PoolRealArray( -16, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
-}
-
-[sub_resource type="Animation" id=2]
-resource_name = "cursor"
-length = 0.6
-loop = true
-tracks/0/type = "bezier"
-tracks/0/path = NodePath("MarginContainer/Cursor/CursorCart:rect_position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"points": PoolRealArray( -16, -0.25, 0, 0.25, 0, -12, -0.25, 0, 0.25, 0, -16, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.3, 0.6 )
-}
-tracks/1/type = "bezier"
-tracks/1/path = NodePath("MarginContainer/Cursor/CursorCart:rect_position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"points": PoolRealArray( -16, -0.25, 0, 0.25, 0, -16, -0.25, 0, 0.25, 0, -16, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.3, 0.6 )
-}
+[ext_resource path="res://Scenes/UIComponents/BaseButton.tscn" type="PackedScene" id=5]
 
 [node name="OptionsMenu" type="Control"]
 anchor_right = 1.0
@@ -87,72 +28,66 @@ custom_constants/margin_top = 200
 custom_constants/margin_left = 200
 custom_constants/margin_bottom = 100
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="ButtonsContainer" type="VBoxContainer" parent="MarginContainer"]
 margin_left = 200.0
 margin_top = 200.0
 margin_right = 397.0
 margin_bottom = 500.0
 alignment = 2
 
-[node name="FullScreenCheckBox" parent="MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
+[node name="FullScreenCheckBox" parent="MarginContainer/ButtonsContainer" instance=ExtResource( 2 )]
 margin_left = 28.0
 margin_right = 168.0
 margin_bottom = 25.0
 rect_scale = Vector2( 1, 1 )
 text = "Pantalla Completa"
 
-[node name="GlowCheckBox" parent="MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
-margin_left = 45.0
-margin_top = 76.0
-margin_right = 151.0
-margin_bottom = 101.0
-rect_scale = Vector2( 1, 1 )
-text = "Brillo Global"
-
-[node name="MusicCheckBox" parent="MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
+[node name="MusicCheckBox" parent="MarginContainer/ButtonsContainer" instance=ExtResource( 2 )]
 margin_left = 65.0
-margin_top = 152.0
+margin_top = 50.0
 margin_right = 132.0
-margin_bottom = 177.0
+margin_bottom = 75.0
 rect_scale = Vector2( 1, 1 )
 text = "Musica"
 
-[node name="BackButton" parent="MarginContainer/VBoxContainer" instance=ExtResource( 5 )]
+[node name="AnimatedTextCheckBox" parent="MarginContainer/ButtonsContainer" instance=ExtResource( 2 )]
+margin_left = 41.0
+margin_top = 101.0
+margin_right = 155.0
+margin_bottom = 126.0
+rect_scale = Vector2( 1, 1 )
+text = "Texto Animado"
+
+[node name="VHSEffectCheckBox" parent="MarginContainer/ButtonsContainer" instance=ExtResource( 2 )]
+margin_left = 54.0
+margin_top = 152.0
+margin_right = 142.0
+margin_bottom = 177.0
+rect_scale = Vector2( 1, 1 )
+text = "Distorsion"
+
+[node name="SFXCheckBox" parent="MarginContainer/ButtonsContainer" instance=ExtResource( 2 )]
+margin_left = 74.0
+margin_top = 202.0
+margin_right = 122.0
+margin_bottom = 227.0
+rect_scale = Vector2( 1, 1 )
+text = "SFX"
+
+[node name="BackButton" parent="MarginContainer/ButtonsContainer" instance=ExtResource( 5 )]
 margin_left = 47.0
-margin_top = 228.0
+margin_top = 253.0
 margin_right = 149.0
-margin_bottom = 264.0
+margin_bottom = 289.0
 rect_pivot_offset = Vector2( 51, 18 )
 size_flags_horizontal = 4
 size_flags_vertical = 2
 text = "Volver"
 align = 1
 
-[node name="Cursor" type="Position2D" parent="MarginContainer"]
-position = Vector2( 233, 212 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CursorCart" type="Label" parent="MarginContainer/Cursor"]
-margin_left = -16.0
-margin_top = -16.0
-margin_right = 16.0
-margin_bottom = 16.0
-custom_fonts/font = ExtResource( 1 )
-text = ">"
-valign = 1
-clip_text = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/RESET = SubResource( 1 )
-anims/cursor = SubResource( 2 )
-
-[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/FullScreenCheckBox" to="." method="_on_FullScreenCheckBox_mouse_entered"]
-[connection signal="toggled" from="MarginContainer/VBoxContainer/FullScreenCheckBox" to="." method="_on_FullScreenCheckBox_toggled"]
-[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/GlowCheckBox" to="." method="_on_GlowCheckBox_mouse_entered"]
-[connection signal="toggled" from="MarginContainer/VBoxContainer/GlowCheckBox" to="." method="_on_GlowCheckBox_toggled"]
-[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/MusicCheckBox" to="." method="_on_MusicCheckBox_mouse_entered"]
-[connection signal="toggled" from="MarginContainer/VBoxContainer/MusicCheckBox" to="." method="_on_MusicCheckBox_toggled"]
-[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/BackButton" to="." method="_on_BackButton_mouse_entered"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="toggled" from="MarginContainer/ButtonsContainer/FullScreenCheckBox" to="." method="_on_FullScreenCheckBox_toggled"]
+[connection signal="toggled" from="MarginContainer/ButtonsContainer/MusicCheckBox" to="." method="_on_MusicCheckBox_toggled"]
+[connection signal="toggled" from="MarginContainer/ButtonsContainer/AnimatedTextCheckBox" to="." method="_on_AnimatedTextCheckBox_toggled"]
+[connection signal="toggled" from="MarginContainer/ButtonsContainer/VHSEffectCheckBox" to="." method="_on_VHSEffect_toggled"]
+[connection signal="toggled" from="MarginContainer/ButtonsContainer/SFXCheckBox" to="." method="_on_SFXCheckBox_toggled"]
+[connection signal="pressed" from="MarginContainer/ButtonsContainer/BackButton" to="." method="_on_BackButton_pressed"]

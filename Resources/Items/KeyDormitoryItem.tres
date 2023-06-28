@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource( 1 )
-item_name = "Llave_Dormitorio"
+item_name = "Llave"
 item_type = 0
 item_description = "La llave que abre la puerta del dormitorio nº1"

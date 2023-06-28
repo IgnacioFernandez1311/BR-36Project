@@ -1,17 +1,17 @@
-extends Node
+class_name Player extends Node
 
-var inventory : Array = []
+var inventory: Array = []
 
 func _ready() -> void:
-	inventory = SaveControl.data.inventory
+	inventory = Database.Global_data.inventory
 
-func pickup_item(item : Item):
+func pickup_item(item: Resource) -> void:
 	inventory.append(item)
-	SaveControl.data.inventory = inventory
+	Database.Global_data.inventory = inventory
 
-func drop_item(item : Item):
+func drop_item(item: Resource) -> void:
 	inventory.erase(item)
-	SaveControl.data.inventory = inventory
+	Database.Global_data.inventory = inventory
 
 func get_inventory_list() -> String:
 	if inventory.size() == 0:

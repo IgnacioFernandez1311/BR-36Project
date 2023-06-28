@@ -1,5 +1,6 @@
 extends Node2D
 
+
 func level_init() -> void:
 	_capsulas_room_init()
 	_pasillo_norte_init()

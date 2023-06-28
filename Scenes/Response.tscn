@@ -1,14 +1,16 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://FontsRes/pixel_mono_16.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scripts/Response.gd" type="Script" id=2]
 
 [node name="Response" type="RichTextLabel"]
-margin_top = 19.0
+margin_top = 16.0
 margin_right = 984.0
-margin_bottom = 43.0
+margin_bottom = 40.0
 size_flags_horizontal = 3
 custom_fonts/normal_font = ExtResource( 1 )
 bbcode_enabled = true
 visible_characters = 0
 percent_visible = 0.0
 fit_content_height = true
+script = ExtResource( 2 )

@@ -1,0 +1,168 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node",
+"class": "CommandHandler",
+"language": "GDScript",
+"path": "res://Scripts/CommandHandler.gd"
+}, {
+"base": "Node",
+"class": "Commands",
+"language": "GDScript",
+"path": "res://Scripts/Commands.gd"
+}, {
+"base": "Position2D",
+"class": "Cursor",
+"language": "GDScript",
+"path": "res://Scripts/Cursor.gd"
+}, {
+"base": "Node",
+"class": "DB",
+"language": "GDScript",
+"path": "res://Autoload/Database.gd"
+}, {
+"base": "PanelContainer",
+"class": "GameInfo",
+"language": "GDScript",
+"path": "res://Scripts/GameInfo.gd"
+}, {
+"base": "PanelContainer",
+"class": "GameRoom",
+"language": "GDScript",
+"path": "res://Scripts/GameRoom.gd"
+}, {
+"base": "Button",
+"class": "GenericButton",
+"language": "GDScript",
+"path": "res://Scripts/BaseButton.gd"
+}, {
+"base": "CheckBox",
+"class": "GenericCheckBox",
+"language": "GDScript",
+"path": "res://Scripts/BaseCheckBox.gd"
+}, {
+"base": "VBoxContainer",
+"class": "InputResponse",
+"language": "GDScript",
+"path": "res://Scripts/InputResponse.gd"
+}, {
+"base": "Resource",
+"class": "Item",
+"language": "GDScript",
+"path": "res://Scripts/Items/Item.gd"
+}, {
+"base": "Resource",
+"class": "Lore",
+"language": "GDScript",
+"path": "res://Scripts/Lore.gd"
+}, {
+"base": "Resource",
+"class": "Machine",
+"language": "GDScript",
+"path": "res://Scripts/Machines/Machine.gd"
+}, {
+"base": "Resource",
+"class": "Npc",
+"language": "GDScript",
+"path": "res://Scripts/NPC.gd"
+}, {
+"base": "Resource",
+"class": "NpcData",
+"language": "GDScript",
+"path": "res://Scripts/NpcData.gd"
+}, {
+"base": "Node",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Scripts/Player.gd"
+}, {
+"base": "RichTextLabel",
+"class": "ResponseLabel",
+"language": "GDScript",
+"path": "res://Scripts/Response.gd"
+}, {
+"base": "Resource",
+"class": "RoomExit",
+"language": "GDScript",
+"path": "res://Scripts/RoomExit.gd"
+}, {
+"base": "Node",
+"class": "RoomsManager",
+"language": "GDScript",
+"path": "res://Scripts/RoomsManager.gd"
+}, {
+"base": "Resource",
+"class": "Terminal",
+"language": "GDScript",
+"path": "res://Scripts/Terminal/Terminal.gd"
+}, {
+"base": "LineEdit",
+"class": "TextInput",
+"language": "GDScript",
+"path": "res://Scripts/Input.gd"
+} ]
+_global_script_class_icons={
+"CommandHandler": "",
+"Commands": "",
+"Cursor": "",
+"DB": "",
+"GameInfo": "",
+"GameRoom": "",
+"GenericButton": "",
+"GenericCheckBox": "",
+"InputResponse": "",
+"Item": "",
+"Lore": "",
+"Machine": "",
+"Npc": "",
+"NpcData": "",
+"Player": "",
+"ResponseLabel": "",
+"RoomExit": "",
+"RoomsManager": "",
+"Terminal": "",
+"TextInput": ""
+}
+
+[application]
+
+config/name="BR-36Project"
+run/main_scene="res://Scenes/SplashScreen.tscn"
+run/low_processor_mode=true
+config/icon="res://icon.png"
+
+[autoload]
+
+SceneTransition="*res://Autoload/SceneTransition.tscn"
+Global="*res://Autoload/Global.gd"
+Types="*res://Autoload/Types.gd"
+Database="*res://Autoload/Database.gd"
+BackgroundMusic="*res://Autoload/BackgroundMusic.tscn"
+
+[display]
+
+window/size/always_on_top=true
+window/vsync/vsync_via_compositor=true
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+environment/default_environment="res://default_env.tres"

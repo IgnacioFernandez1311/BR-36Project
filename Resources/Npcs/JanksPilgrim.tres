@@ -1,11 +1,14 @@
-[gd_resource type="Resource" load_steps=2 format=2]
+[gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/NPC.gd" type="Script" id=1]
+[ext_resource path="res://Resources/Items/JanksItem.tres" type="Resource" id=2]
 
 [resource]
 script = ExtResource( 1 )
 npc_name = "Janks"
 npc_display_name = "Janks Pilgrim"
-post_quest_dialog = "Este es el dialogo despues de una quest de un npc..."
-dialogs = [ "Hola, Soy Janks", "Como estas BR-36?", "Espero que estes disfrutando del viaje" ]
-npc_description = "Esta es la descripcion del NPC"
+npc_race = "Kalebo"
+npc_description = "Esta es la descripcion de Janks"
+dialogs = [ "Hola BR-36, mi nombre es Janks Pilgrim.", "No tengo mucho tiempo para hablar contigo, lo siento... podrias pasarme mi identificacion compañero?" ]
+post_quest_dialogs = [ "Gracias por darme mi identificacion, aqui tienes la llave de acceso al dormitorio de ingenieros, busca a Joseph, necesita de tu ayuda para reparar la nave.", "Deprisa, busca a Joseph. Necesita tu ayuda.", "Busca a Joseph en el dormitorio de ingenieros." ]
+quest_item = ExtResource( 2 )

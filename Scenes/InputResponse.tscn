@@ -16,4 +16,6 @@ rect_min_size = Vector2( 0, 24 )
 [node name="Response" parent="." instance=ExtResource( 3 )]
 margin_top = 28.0
 margin_right = 1024.0
-margin_bottom = 53.0
+margin_bottom = 46.0
+visible_characters = -1
+percent_visible = 1.0

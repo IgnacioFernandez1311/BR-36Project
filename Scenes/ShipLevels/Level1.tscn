@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/ShipLevel1.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Room.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/GameRoom.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Resources/Terminals/CabinaTerminal.tres" type="Resource" id=3]
+[ext_resource path="res://Resources/Terminals/BrokenTerminal.tres" type="Resource" id=4]
 
 [node name="Level1" type="Node2D" groups=["Level1"]]
 visible = false
@@ -15,6 +17,7 @@ margin_bottom = -574.0
 room_name = "la Cabina"
 room_description = "[Informe] Aquí, el piloto y su equipo se aseguran de llevar a la nave da manera segura. Hay tantos botones y palancas que algunas parecen de adornos. 
 [Advertencia] Área reservada para miembros esenciales de la nave."
+room_terminal = ExtResource( 3 )
 
 [node name="PuenteRoom" parent="." instance=ExtResource( 2 )]
 margin_left = -126.0
@@ -25,6 +28,7 @@ room_name = "el Puente"
 room_description = "[Informe] En esta zona, los comandantes y técnicos fijan el rumbo de la nave. El centro de mando recibe los informes correspondientes a toda la nave y los almacena en una memoria central accesible bajo permiso expreso. Además de llevar a cabo varios procesos burocráticos. Procesos aburridos.
 El lugar está repleto de escritorios y ordenadores de alto rendimiento repletos de informes.
 Área reservada para miembros esenciales de la nave."
+room_terminal = ExtResource( 4 )
 
 [node name="CamarasRoom" parent="." instance=ExtResource( 2 )]
 margin_left = 184.0

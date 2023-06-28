@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://FontsRes/pixel_mono_16.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Img/UI/CheckBoxBg.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Img/UI/CheckBoxChecked.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/BaseCheckBox.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/UIComponents/Cursor.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/SFX/select_button.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/SFX/navigate.wav" type="AudioStream" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="BaseCheckBox" type="CheckBox"]
+margin_right = 285.0
+margin_bottom = 56.0
+rect_scale = Vector2( 2, 2 )
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+custom_fonts/font = ExtResource( 1 )
+custom_icons/checked = ExtResource( 3 )
+custom_icons/unchecked = ExtResource( 2 )
+custom_styles/focus = SubResource( 1 )
+text = "Option"
+flat = true
+align = 2
+icon_align = 1
+script = ExtResource( 4 )
+
+[node name="Cursor" parent="." instance=ExtResource( 5 )]
+visible = false
+position = Vector2( -5, 12 )
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="NavigatePlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+
+[connection signal="focus_entered" from="." to="." method="_on_BaseCheckBox_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_BaseCheckBox_focus_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_CheckBox_mouse_entered"]
+[connection signal="pressed" from="." to="." method="_on_BaseCheckBox_pressed"]

@@ -6,4 +6,4 @@
 script = ExtResource( 1 )
 item_name = "llave_reparacion"
 item_type = 2
-item_description = ""
+item_description = "Llave de reparacion."

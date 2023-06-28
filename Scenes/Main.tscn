@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/Input.gd" type="Script" id=1]
 [ext_resource path="res://FontsRes/pixel_mono_16.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/CommandHandler.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/Commands.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/ShipLevels/Level1.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scripts/RoomsManager.gd" type="Script" id=7]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=9]
@@ -27,6 +28,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 3 )
 
+[node name="CommandHandler" type="Node" parent="."]
+script = ExtResource( 4 )
+game_info_path = NodePath("../Background/MarginContainer/Columns/Rows/GameInfo")
+player_path = NodePath("../Player")
+
+[node name="Commands" type="Node" parent="CommandHandler"]
+script = ExtResource( 5 )
+
 [node name="RoomsManager" type="Node" parent="."]
 script = ExtResource( 7 )
 
@@ -35,9 +44,6 @@ position = Vector2( 2078, 894 )
 
 [node name="Level2" parent="RoomsManager" instance=ExtResource( 12 )]
 position = Vector2( 668, 1388 )
-
-[node name="CommandHandler" type="Node" parent="."]
-script = ExtResource( 4 )
 
 [node name="Player" type="Node" parent="."]
 script = ExtResource( 9 )
@@ -50,36 +56,37 @@ custom_styles/panel = SubResource( 1 )
 [node name="MarginContainer" type="MarginContainer" parent="Background"]
 margin_right = 1024.0
 margin_bottom = 600.0
-custom_constants/margin_right = 20
-custom_constants/margin_top = 20
-custom_constants/margin_left = 20
-custom_constants/margin_bottom = 20
+custom_constants/margin_right = 35
+custom_constants/margin_top = 35
+custom_constants/margin_left = 35
+custom_constants/margin_bottom = 35
 
 [node name="Columns" type="HBoxContainer" parent="Background/MarginContainer"]
-margin_left = 20.0
-margin_top = 20.0
-margin_right = 1004.0
-margin_bottom = 580.0
+margin_left = 35.0
+margin_top = 35.0
+margin_right = 989.0
+margin_bottom = 565.0
 custom_constants/separation = 15
 
 [node name="Rows" type="VBoxContainer" parent="Background/MarginContainer/Columns"]
-margin_right = 669.0
-margin_bottom = 560.0
+margin_right = 639.0
+margin_bottom = 530.0
 size_flags_horizontal = 3
 custom_constants/separation = 20
 
 [node name="GameInfo" parent="Background/MarginContainer/Columns/Rows" instance=ExtResource( 10 )]
-margin_right = 669.0
+margin_right = 639.0
+margin_bottom = 480.0
 
 [node name="InputArea" type="PanelContainer" parent="Background/MarginContainer/Columns/Rows"]
-margin_top = 530.0
-margin_right = 669.0
-margin_bottom = 560.0
+margin_top = 500.0
+margin_right = 639.0
+margin_bottom = 530.0
 rect_min_size = Vector2( 0, 30 )
 custom_styles/panel = SubResource( 9 )
 
 [node name="Columns" type="HBoxContainer" parent="Background/MarginContainer/Columns/Rows/InputArea"]
-margin_right = 669.0
+margin_right = 639.0
 margin_bottom = 30.0
 
 [node name="Caret" type="Label" parent="Background/MarginContainer/Columns/Rows/InputArea/Columns"]
@@ -91,7 +98,7 @@ text = " > "
 
 [node name="Input" type="LineEdit" parent="Background/MarginContainer/Columns/Rows/InputArea/Columns"]
 margin_left = 24.0
-margin_right = 669.0
+margin_right = 639.0
 margin_bottom = 30.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 2 )
@@ -104,10 +111,10 @@ caret_blink_speed = 0.5
 script = ExtResource( 1 )
 
 [node name="SidePanel" parent="Background/MarginContainer/Columns" instance=ExtResource( 11 )]
-margin_left = 684.0
+margin_left = 654.0
+margin_right = 954.0
+margin_bottom = 530.0
 rect_min_size = Vector2( 300, 0 )
-
-[node name="MainAudio" type="AudioStreamPlayer" parent="."]
 
 [connection signal="text_entered" from="Background/MarginContainer/Columns/Rows/InputArea/Columns/Input" to="." method="_on_Input_text_entered"]
 [connection signal="text_entered" from="Background/MarginContainer/Columns/Rows/InputArea/Columns/Input" to="Background/MarginContainer/Columns/Rows/InputArea/Columns/Input" method="_on_Input_text_entered"]
