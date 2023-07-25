@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/NPC.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+npc_name = "Ficsh"
+npc_display_name = "Ficsh Zuppa"
+npc_race = "Kaleg"
+npc_description = "Gozaba de cierto privilegio entre los esclavos, pues su ácido sentido del humor agradaba a los duros Geonitas. Muchas de sus bromas se basan en burlarse del resto. Se desconocen mas datos sobre su persona."
+dialogs = [  ]
+post_quest_dialogs = [  ]

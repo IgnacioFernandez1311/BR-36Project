@@ -11,10 +11,10 @@ func _ready() -> void:
 	$AnimationPlayer.play("blink")
 
 func _on_Play_pressed() -> void:
-	SceneTransition.change_scene("res://Scenes/Main.tscn", "dissolve")
+	SceneTransition.change_scene("res://Scenes/Main.tscn")
 
 func _on_Options_pressed() -> void:
-	SceneTransition.change_scene("res://Scenes/OptionsMenu.tscn", "dissolve")
+	SceneTransition.change_scene("res://Scenes/OptionsMenu.tscn")
 
 func _on_Quit_pressed() -> void:
 	SceneTransition.quit("dissolve")

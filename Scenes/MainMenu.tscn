@@ -50,7 +50,8 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=3]
 resource_name = "write"
-length = 2.0
+length = 0.75
+step = 0.05
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("MainMenuMargin/Rows/HBoxContainer/Title:percent_visible")
 tracks/0/interp = 1
@@ -59,7 +60,7 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 2 )
+"times": PoolRealArray( 0, 0.75 )
 }
 
 [node name="MainMenu" type="Control"]
@@ -124,26 +125,26 @@ custom_constants/margin_left = 60
 
 [node name="Buttons" type="VBoxContainer" parent="MainMenuMargin/Rows/ButtonsMargin"]
 margin_left = 60.0
-margin_right = 183.0
+margin_right = 165.0
 margin_bottom = 116.0
 size_flags_horizontal = 0
 alignment = 1
 
 [node name="Play" parent="MainMenuMargin/Rows/ButtonsMargin/Buttons" instance=ExtResource( 1 )]
-margin_right = 123.0
-text = "Jugar"
+margin_right = 105.0
+text = "Start"
 
 [node name="Options" parent="MainMenuMargin/Rows/ButtonsMargin/Buttons" instance=ExtResource( 1 )]
 margin_top = 40.0
-margin_right = 123.0
+margin_right = 105.0
 margin_bottom = 76.0
-text = "Opciones"
+text = "Options"
 
 [node name="Quit" parent="MainMenuMargin/Rows/ButtonsMargin/Buttons" instance=ExtResource( 1 )]
 margin_top = 80.0
-margin_right = 123.0
+margin_right = 105.0
 margin_bottom = 116.0
-text = "Salir"
+text = "Quit"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 2 )

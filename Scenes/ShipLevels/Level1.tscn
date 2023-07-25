@@ -1,29 +1,17 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/ShipLevel1.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/GameRoom.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Resources/Terminals/CabinaTerminal.tres" type="Resource" id=3]
 [ext_resource path="res://Resources/Terminals/BrokenTerminal.tres" type="Resource" id=4]
 
 [node name="Level1" type="Node2D" groups=["Level1"]]
-visible = false
 script = ExtResource( 1 )
 
-[node name="CabinaRoom" parent="." instance=ExtResource( 2 )]
-margin_left = -133.0
-margin_top = -805.0
-margin_right = 131.0
-margin_bottom = -574.0
-room_name = "la Cabina"
-room_description = "[Informe] Aquí, el piloto y su equipo se aseguran de llevar a la nave da manera segura. Hay tantos botones y palancas que algunas parecen de adornos. 
-[Advertencia] Área reservada para miembros esenciales de la nave."
-room_terminal = ExtResource( 3 )
-
 [node name="PuenteRoom" parent="." instance=ExtResource( 2 )]
-margin_left = -126.0
-margin_top = -548.0
-margin_right = 138.0
-margin_bottom = -263.0
+margin_left = -118.0
+margin_top = -692.0
+margin_right = 146.0
+margin_bottom = -370.0
 room_name = "el Puente"
 room_description = "[Informe] En esta zona, los comandantes y técnicos fijan el rumbo de la nave. El centro de mando recibe los informes correspondientes a toda la nave y los almacena en una memoria central accesible bajo permiso expreso. Además de llevar a cabo varios procesos burocráticos. Procesos aburridos.
 El lugar está repleto de escritorios y ordenadores de alto rendimiento repletos de informes.
@@ -31,122 +19,73 @@ El lugar está repleto de escritorios y ordenadores de alto rendimiento repletos
 room_terminal = ExtResource( 4 )
 
 [node name="CamarasRoom" parent="." instance=ExtResource( 2 )]
-margin_left = 184.0
-margin_top = -282.0
-margin_right = 448.0
-margin_bottom = 3.0
+margin_left = 234.0
+margin_top = -205.0
+margin_right = 498.0
+margin_bottom = 97.0
 room_name = "la Sala de Camaras"
 room_description = "[Informe] Esta sala, repleta de monitores y máquinas expendedoras de café (sin azúcar) tiene la función de asegurar la seguridad general de la nave mediante el monitoreo de numerosas cámaras de seguridad que, para nada, violan los principios de privacidad de la U.S.I.
 Toda la información se almacena en la memoria central de la nave y puede ser inspeccionada desde la misma sala de mando o el Puente de mando.
 "
 
 [node name="ControlRoom" parent="." instance=ExtResource( 2 )]
-margin_left = -424.0
-margin_top = -290.0
-margin_right = -139.0
-margin_bottom = -5.0
-room_name = "la Sala de Control Nivel 1"
+margin_left = -441.0
+margin_top = -204.0
+margin_right = -156.0
+margin_bottom = 81.0
+room_name = "la Sala de Control"
 room_description = "[Informe] En esta sala se recopila e identifican los daños y desperfectos de la nave. Se generan informes y se buscan soluciones a los problemas. También se encarga del mantenimiento necesario para evitar estos problemas.
 "
 
 [node name="Exclusa" parent="." instance=ExtResource( 2 )]
-margin_left = -702.0
-margin_top = -266.0
-margin_right = -438.0
-margin_bottom = -52.0
+margin_left = -774.0
+margin_top = -199.0
+margin_right = -510.0
+margin_bottom = 103.0
 room_name = "una Exclusa"
 room_description = "[Informe] Salida hacia el exterior de la nave.
 La habitación cuenta con un sistema de despresurización y un sistema de seguridad que evita que la compuerta exterior se abra mientras la puerta hacia la Sala de Control se encuentra abierta.
 Se recomienda colocarse el traje espacial antes de salir al exterior, excepto si eres un droide. (Advertencia aparentemente necesaria)
 "
 
-[node name="PasilloNorte1" parent="." instance=ExtResource( 2 )]
-margin_left = -116.0
-margin_top = -247.0
-margin_right = 154.0
-margin_bottom = -33.0
-room_name = "el Pasillo Norte Nivel 1"
+[node name="PasilloRoom" parent="." instance=ExtResource( 2 )]
+margin_left = -120.0
+margin_top = -185.0
+margin_right = 150.0
+margin_bottom = 29.0
+room_name = "el Pasillo"
 room_description = "[Informe] Pasillo que conecta la zona de mando con la zona de alojamiento del primer nivel."
 
 [node name="ReunionesRoom" parent="." instance=ExtResource( 2 )]
-margin_left = -115.0
-margin_top = 68.0
-margin_right = 149.0
-margin_bottom = 650.0
+margin_left = -99.0
+margin_top = 180.0
+margin_right = 165.0
+margin_bottom = 499.0
 room_name = "la Sala de Reuniones"
 room_description = "[Informe] Aquí se toman las decisiones importantes sobre el mantenimiento y la utilización de los recursos de la nave que requieren la opinión de la mayoría del personal (relevante) de la nave. También se usa para decidir el castigo de tripulantes con mal comportamiento. A veces festejan cumpleaños aquí.
 Cuando el capitán llega tarde, la sala se vuelve, de inmediato, la sala de campeonato de ajedrez 3D."
 
-[node name="Ascensor1" parent="." instance=ExtResource( 2 )]
-margin_left = -403.0
-margin_top = 67.0
-margin_right = -139.0
-margin_bottom = 281.0
+[node name="Ascensor" parent="." instance=ExtResource( 2 )]
+margin_left = -460.0
+margin_top = 229.0
+margin_right = -196.0
+margin_bottom = 443.0
 room_name = "el Ascensor"
 room_description = "[Informe] Ascensor de acceso a los tres pisos de la nave. Su uso requiere de un permiso especial dado únicamente a los miembros esenciales de la nave."
 
-[node name="PasilloSur1" parent="." instance=ExtResource( 2 )]
-margin_left = -164.0
-margin_top = 392.0
-margin_right = 208.0
-margin_bottom = 606.0
-room_name = "el Pasillo Sur Nivel 1: Dormitorios"
-room_description = "[Informe] Pasillo que conecta las cuatro habitaciones del piso superior y que es punto de paso entre Pasillo Sur, el Comedor y la Cocina."
-
 [node name="Dormitorio1" parent="." instance=ExtResource( 2 )]
-margin_left = 217.0
-margin_top = 313.0
-margin_right = 481.0
-margin_bottom = 527.0
-room_name = "el Dormitorio 1"
+margin_left = 230.0
+margin_top = 561.0
+margin_right = 494.0
+margin_bottom = 775.0
+room_name = "el Dormitorio"
 room_description = "[Informe]Exclusa para salir al exterior de la nave..."
-
-[node name="Dormitorio2" parent="." instance=ExtResource( 2 )]
-margin_left = 214.0
-margin_top = 544.0
-margin_right = 478.0
-margin_bottom = 758.0
-room_name = "el Dormitorio 2"
-room_description = "[Informe]Exclusa para salir al exterior de la nave..."
-
-[node name="Dormitorio3" parent="." instance=ExtResource( 2 )]
-margin_left = -435.0
-margin_top = 551.0
-margin_right = -171.0
-margin_bottom = 765.0
-room_name = "el Dormitorio 3"
-room_description = "[Informe]Exclusa para salir al exterior de la nave..."
-
-[node name="Dormitorio4" parent="." instance=ExtResource( 2 )]
-margin_left = -430.0
-margin_top = 313.0
-margin_right = -166.0
-margin_bottom = 527.0
-room_name = "el Dormitorio 4"
-room_description = "[Informe]Exclusa para salir al exterior de la nave..."
-
-[node name="PasilloSur2" parent="." instance=ExtResource( 2 )]
-margin_left = -165.0
-margin_top = 825.0
-margin_right = 207.0
-margin_bottom = 1039.0
-room_name = "el Pasillo Sur Nivel 1: Popa"
-room_description = "[Informe] Pasillo que conecta con la cocina y el comedor"
-
-[node name="CocinaRoom" parent="." instance=ExtResource( 2 )]
-margin_left = -445.0
-margin_top = 819.0
-margin_right = -181.0
-margin_bottom = 1033.0
-room_name = "la Cocina"
-room_description = "[Informe] La habitación más limpia de la nave. El chef se toma muy en serio su trabajo, y no permite la entrada a nadie que no sea de su equipo de cocineros. En parte porque es un cascarrabias.
-El menú se ve más apetitoso que el que le dan al resto de refugiados."
 
 [node name="ComedorRoom" parent="." instance=ExtResource( 2 )]
-margin_left = 215.0
-margin_top = 821.0
-margin_right = 479.0
-margin_bottom = 1035.0
+margin_left = 242.0
+margin_top = 225.0
+margin_right = 506.0
+margin_bottom = 439.0
 room_name = "el Comedor"
 room_description = "[Informe] Sala donde se sirven los alimentos a los miembros esenciales de la nave. Hay varias máquinas expendedoras y máquinas de gancho, aunque son gratis y están ahí para entretener y alentar la ludopatía.
 "

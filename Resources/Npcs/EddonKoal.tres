@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/NPC.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+npc_name = "Eddon"
+npc_display_name = "Eddon Koal"
+npc_race = "Kaleg"
+npc_description = "Esclavo en la mina de carbon que antaño supervisaba su familia. Es de lengua mordaz y tiende a insultar. Le gusta la Mielefruta."
+dialogs = [  ]
+post_quest_dialogs = [  ]

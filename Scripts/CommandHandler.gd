@@ -31,7 +31,6 @@ func go(second_word: String) -> String:
 		return PoolStringArray(["Te movilizas hacia "+ Types.wrap_text(second_word.capitalize(),Types.COLOR_LOCATION), change_response]).join("\n")
 	
 	return "Esta habitacion no tiene salida hacia "+Types.wrap_text(second_word.capitalize(),Types.COLOR_LOCATION)
-	
 
 func talk(second_word: String) -> String:
 	if second_word == "":
@@ -55,7 +54,6 @@ func take_item(second_word: String) -> String:
 			emit_signal("room_updated", current_room)
 			return "Has añadido [ "+Types.wrap_text(item.item_name.capitalize(),Types.COLOR_ITEM)+" ] a tu inventario"
 	return "Ese item no se encuentra en esta habitacion..."
-
 
 func drop_item(second_word: String) -> String:
 	if second_word == "":
@@ -117,26 +115,39 @@ func use(second_word: String) -> String:
 
 func quit() -> void:
 	yield(get_tree().create_timer(1.5), "timeout")
-	SceneTransition.change_scene("res://Scenes/SplashScreen.tscn", "dissolve")
-	
+	SceneTransition.change_scene("res://Scenes/SplashScreen.tscn")
 
-static func help() -> String:
-	return "%s:\n%s" % [Types.wrap_text("Estos son los comandos que se encuentran a tu disposición",Types.COLOR_SYSTEM), 
-		"- ir [localizacion]\n- inventario\n- recoger [item]\n- soltar [item]\n- usar [item]\n- escanear [item/maquina/personaje]\n- apagar\n- ayuda."]
-
+func help() -> String:
+	var npc_text: String = Types.wrap_text("personaje", Types.COLOR_NPC)
+	var machine_text: String = Types.wrap_text("maquina", Types.COLOR_MACHINE)
+	var location_text: String = Types.wrap_text("localizacion", Types.COLOR_LOCATION)
+	var item_text: String = Types.wrap_text("item", Types.COLOR_ITEM)
+	return "%s:%s" % [Types.wrap_text("Estos son los comandos que se encuentran a tu disposición",Types.COLOR_SYSTEM), 
+	"""
+	- ir [{location}]
+	- inventario
+	- recoger [{item}]
+	- soltar [{item}]
+	- usar [{item}]
+	- escanear [{item}/{machine}/{npc}]
+	- hablar [{npc}]
+	- apagar""".format({
+		"item": item_text,
+		"location": location_text,
+		"npc": npc_text,
+		"machine": machine_text,
+	})]
 
 func set_current_room(new_room: GameRoom) -> void:
 	current_room = new_room
 
 func change_room(new_room: GameRoom) -> String:
 	set_current_room(new_room)
-#	if new_room.get_parent().is_in_group("Level1"):
-#		Database.Global_data.level.level_number = 0
-#	if new_room.get_parent().is_in_group("Level2"):
-#		Database.Global_data.level.level_number = 1
-#	if new_room.get_parent().is_in_group("Level3"):
-#		Database.Global_data.level.level_number = 2
-#	Database.Global_data.level.room_name = new_room.to_string()
-#	SaveControl.save_data(Database.Global_data)
+	if new_room.get_parent().is_in_group("Level1"):
+		Database.Global_data.level.number = 0
+	if new_room.get_parent().is_in_group("Level2"):
+		Database.Global_data.level.number = 1
+	Database.Global_data.level.room_name = new_room.to_string()
+	Database.save_data()
 	emit_signal("room_changed", new_room)
 	return new_room.get_full_description()

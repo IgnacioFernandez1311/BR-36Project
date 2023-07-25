@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/NPC.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+npc_name = "Herme"
+npc_display_name = "Herme Kton"
+npc_race = "Knut"
+npc_description = "Según testimonios, tenía cierta cercania con el contrabando de bienes. Realizaba sobornos a los guardias Geonitas, pero no tiene historial criminal que justifique una vigilancia cercana."
+dialogs = [  ]
+post_quest_dialogs = [  ]

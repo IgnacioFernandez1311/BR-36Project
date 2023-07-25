@@ -1,23 +1,19 @@
 class_name DB extends Node
 
 
-var rooms: Dictionary = {
-	"dormitory_1_data" : DBRoom.new()
-}
-
 const FILEPATH = "user://config.save"
 
 var Global_data: Dictionary = {
 		"level" : {
-			"level_number" : 0,
-			"room_name" : "CabinaRoom"
+			"number" : 0,
+			"room_name" : "PuenteRoom"
 		},
 		"inventory": [],
 		"fullscreen" : false,
-		"music" : false,
-		"text_anim" : false,
-		"shader_effect" : false,
-		"sfx": false
+		"music" : true,
+		"text_anim" : true,
+		"shader_effect" : true,
+		"sfx": true
 	}
 
 
@@ -40,18 +36,3 @@ func load_data() -> void:
 		Global_data = file.get_var()
 	save_data()
 	file.close()
-
-
-
-class DBRoom extends GameRoom:
-	var data: Dictionary = {
-		"name" : "",
-		"items" : [],
-		"machines" : [],
-		"npcs" : []
-	}
-	
-	func initialize_room() -> void:
-		for npc in npcs:
-			npc.load_data()
-

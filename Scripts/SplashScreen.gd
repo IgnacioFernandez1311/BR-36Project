@@ -1,13 +1,13 @@
 extends Control
 
 onready var animator: AnimationPlayer = get_node("AnimationPlayer")
-onready var splash_audio: AudioStreamPlayer = $SplashAudio
 
+var some: int = 75
 
 func _ready() -> void:
+	OS.window_fullscreen = Database.Global_data.fullscreen
 	animator.play("Splash")
-	BackgroundMusic.playing = false
-	splash_audio.playing = Database.Global_data.sfx
+	BackgroundMusic.playing = Database.Global_data.music
 	yield(animator,"animation_finished")
-	SceneTransition.change_scene("res://Scenes/MainMenu.tscn", "dissolve")
+	SceneTransition.change_scene("res://Scenes/MainMenu.tscn")
 	

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/VoidLogotipo.png-5dbc12fee57846bf0b68cbe30beb9207.stex"
+path="res://.import/LogoM.png-c76ffecbb1a40216bc08e57761da000c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Img/VoidLogotipo.png"
-dest_files=[ "res://.import/VoidLogotipo.png-5dbc12fee57846bf0b68cbe30beb9207.stex" ]
+source_file="res://Assets/Img/LogoM.png"
+dest_files=[ "res://.import/LogoM.png-c76ffecbb1a40216bc08e57761da000c.stex" ]
 
 [params]
 

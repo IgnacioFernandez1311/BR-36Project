@@ -16,7 +16,7 @@ func _ready() -> void:
 	
 
 func _process(_delta: float) -> void:
-	Global.fullscreen = Database.Global_data.fullscreen
+	OS.window_fullscreen = Database.Global_data.fullscreen
 	SceneTransition.get_node("VHSShaderEffect").visible = shader_effect_checkbox.pressed
 
 
@@ -26,7 +26,7 @@ func _on_FullScreenCheckBox_toggled(button_pressed : bool) -> void:
 	Database.save_data()
 
 func _on_BackButton_pressed() -> void:
-	SceneTransition.change_scene("res://Scenes/MainMenu.tscn", "dissolve")
+	SceneTransition.change_scene("res://Scenes/MainMenu.tscn")
 
 func _on_MusicCheckBox_toggled(button_pressed: bool) -> void:
 	music_checkbox.pressed = button_pressed

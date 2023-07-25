@@ -4,8 +4,8 @@ onready var levels: Array = self.get_children()
 
 func _ready() -> void:
 	for level in levels:
-#		yield(level, "ready")
-		level.level_init()
+		if level.has_method("level_init"):
+			level.level_init()
 	
 	
 static func load_item(item_name: String) -> Resource:

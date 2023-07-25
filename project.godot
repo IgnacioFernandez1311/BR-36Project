@@ -74,11 +74,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/NPC.gd"
 }, {
-"base": "Resource",
-"class": "NpcData",
-"language": "GDScript",
-"path": "res://Scripts/NpcData.gd"
-}, {
 "base": "Node",
 "class": "Player",
 "language": "GDScript",
@@ -123,7 +118,6 @@ _global_script_class_icons={
 "Lore": "",
 "Machine": "",
 "Npc": "",
-"NpcData": "",
 "Player": "",
 "ResponseLabel": "",
 "RoomExit": "",
@@ -142,7 +136,6 @@ config/icon="res://icon.png"
 [autoload]
 
 SceneTransition="*res://Autoload/SceneTransition.tscn"
-Global="*res://Autoload/Global.gd"
 Types="*res://Autoload/Types.gd"
 Database="*res://Autoload/Database.gd"
 BackgroundMusic="*res://Autoload/BackgroundMusic.tscn"

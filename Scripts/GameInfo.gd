@@ -52,6 +52,7 @@ func _delete_history_beyond_limit() -> void:
 
 func _add_response_to_game(response: Control) -> void:
 	history_rows.add_child(response)
+	$ResponseAudio.playing = true if Database.Global_data.sfx else false
 	_delete_history_beyond_limit()
 
 func delete_history() -> void:

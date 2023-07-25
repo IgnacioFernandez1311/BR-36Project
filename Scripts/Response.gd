@@ -10,7 +10,7 @@ func handle_text_animation(tween_object: Node, tween_variation: float, tween_dur
 	if animate_text:
 		input_area.editable = false
 		var tween: SceneTreeTween = create_tween()
-		var tween_animation: PropertyTweener = tween.tween_property(tween_object,"percent_visible", tween_variation + 1, tween_duration)
-		yield(tween_animation,"finished")
+		var _tween_animation: PropertyTweener = tween.tween_property(tween_object,"percent_visible", tween_variation + 1, tween_duration)
+		yield(get_tree().create_timer(1), "timeout")
 		input_area.editable = true
 

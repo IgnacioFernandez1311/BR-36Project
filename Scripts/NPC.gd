@@ -3,7 +3,7 @@ class_name Npc extends Resource
 
 export(String) var npc_name: String = ""
 export(String) var npc_display_name: String = ""
-export(String, "Kaleg", "Humano", "Droide", "Idoriano") var npc_race: String
+export(String, "Kaleg", "Humano", "Droide", "Idorian", "Knut", "Geonita", "Numidian", "Arcadian", "Hibrido") var npc_race: String = "Humano"
 export(String, MULTILINE) var npc_description: String = "Esta es la descripcion del NPC"
 export(Array, String, MULTILINE) var dialogs: PoolStringArray
 export(Array, String, MULTILINE) var post_quest_dialogs: PoolStringArray 

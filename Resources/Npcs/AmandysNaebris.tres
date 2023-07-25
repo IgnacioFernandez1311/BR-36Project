@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/NPC.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+npc_name = "Amandys"
+npc_display_name = "Amandys Naebris"
+npc_race = "Humano"
+npc_description = "Pese a su rango en el equipo, es una persona muy reservada que rara vez da su opinion en lo referente a la administracion de la nave. Se centra, principalmente, en redactar informes importantes, aun si la tarea no le corresponde. Aprecia su intimidad y la de sus compañeros. Es considerada y humanitaria."
+dialogs = [  ]
+post_quest_dialogs = [  ]

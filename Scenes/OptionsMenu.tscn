@@ -36,53 +36,53 @@ margin_bottom = 500.0
 alignment = 2
 
 [node name="FullScreenCheckBox" parent="MarginContainer/ButtonsContainer" instance=ExtResource( 2 )]
-margin_left = 28.0
-margin_right = 168.0
-margin_bottom = 25.0
+margin_left = 34.0
+margin_right = 163.0
+margin_bottom = 32.0
 rect_scale = Vector2( 1, 1 )
-text = "Pantalla Completa"
+text = "Fullscreen"
 
 [node name="MusicCheckBox" parent="MarginContainer/ButtonsContainer" instance=ExtResource( 2 )]
-margin_left = 65.0
+margin_left = 59.0
 margin_top = 50.0
-margin_right = 132.0
-margin_bottom = 75.0
+margin_right = 137.0
+margin_bottom = 82.0
 rect_scale = Vector2( 1, 1 )
-text = "Musica"
+text = "Music"
 
 [node name="AnimatedTextCheckBox" parent="MarginContainer/ButtonsContainer" instance=ExtResource( 2 )]
-margin_left = 41.0
+margin_left = 20.0
 margin_top = 101.0
-margin_right = 155.0
-margin_bottom = 126.0
+margin_right = 177.0
+margin_bottom = 133.0
 rect_scale = Vector2( 1, 1 )
-text = "Texto Animado"
+text = "Animated text"
 
 [node name="VHSEffectCheckBox" parent="MarginContainer/ButtonsContainer" instance=ExtResource( 2 )]
-margin_left = 54.0
+margin_left = 37.0
 margin_top = 152.0
-margin_right = 142.0
-margin_bottom = 177.0
+margin_right = 160.0
+margin_bottom = 184.0
 rect_scale = Vector2( 1, 1 )
 text = "Distorsion"
 
 [node name="SFXCheckBox" parent="MarginContainer/ButtonsContainer" instance=ExtResource( 2 )]
-margin_left = 74.0
+margin_left = 18.0
 margin_top = 202.0
-margin_right = 122.0
-margin_bottom = 227.0
+margin_right = 179.0
+margin_bottom = 234.0
 rect_scale = Vector2( 1, 1 )
-text = "SFX"
+text = "Sound Effects"
 
 [node name="BackButton" parent="MarginContainer/ButtonsContainer" instance=ExtResource( 5 )]
-margin_left = 47.0
+margin_left = 62.0
 margin_top = 253.0
-margin_right = 149.0
+margin_right = 134.0
 margin_bottom = 289.0
 rect_pivot_offset = Vector2( 51, 18 )
 size_flags_horizontal = 4
 size_flags_vertical = 2
-text = "Volver"
+text = "Back"
 align = 1
 
 [connection signal="toggled" from="MarginContainer/ButtonsContainer/FullScreenCheckBox" to="." method="_on_FullScreenCheckBox_toggled"]
